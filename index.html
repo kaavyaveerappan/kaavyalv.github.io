@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anbarasan K – Aspiring Data Scientist & ML Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-box {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skill-tag {
+            background: #e5e7ff;
+            padding: 7px 13px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #667eea;
+        }
+
+
+        /* HEADER */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 20px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            height: 80px;
+            /* <-- HEADER HEIGHT FIX */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* HERO SECTION FIX – NO MORE WHITE SPACE */
+        .hero {
+            height: calc(100vh - 80px);
+            /* subtract header height */
+            padding-top: 80px;
+            /* prevent content hiding */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: rgb(0, 0, 128);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* SECTION BASE */
+        section {
+            padding: 110px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ABOUT */
+        .profile-img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            display: block;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* SKILLS */
+        .skill-tag {
+            background: #e5e7ff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
+        /* INTERACTIVE CONTACT BAR */
+        .bottom-contact {
+            background: #ffffff;
+            padding: 40px 20px;
+            border-top: 3px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: #f5f6ff;
+            transition: 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            background: #e9eaff;
+            border-color: #667eea;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #667eea;
+        }
+
+        .contact-icon {
+            font-size: 1.4rem;
+        }
+
+        /* CUTE INTERACTIVE BUTTONS */
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cute-btn {
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* VIEW MY WORK (primary) */
+        .cute-primary {
+            background: #ffffff;
+            color: #667eea;
+            border: 2px solid transparent;
+        }
+
+        .cute-primary:hover {
+            background: #f0f2ff;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        /* GITHUB PROFILE (outline) */
+        .cute-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        .cute-outline:hover {
+            background: #ffffff;
+            color: #667eea;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        /* PROJECTS */
+        .project-card {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+        }
+
+        .project-card a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* CONTACT */
+        #contact {
+            background: #f7f7f7;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .resume-btn {
+            background: #667eea;
+            padding: 12px 25px;
+            border-radius: 25px;
+            color: white;
+            display: inline-block;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* HERO ANIMATIONS */
+        .hero * {
+            opacity: 0;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero h1 {
+            animation-delay: 0.2s;
+        }
+
+        .hero p {
+            animation-delay: 0.35s;
+        }
+
+        .btn-primary-hero,
+        .btn-outline-hero {
+            animation-delay: 0.5s;
+        }
+
+        /* Fade + Slide Up */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating Background Circles */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-circle {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            animation: floatCircle 10s ease-in-out infinite;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-40px) scale(1.05);
+            }
+        }
+
+        /* Parallax mouse movement */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            header {
+                height: 70px;
+                /* mobile header smaller */
+            }
+
+            .hero {
+                height: calc(100vh - 70px);
+                padding-top: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">AK</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-buttons">
+
+
+
+
+
+        </div>
+
+        <!-- Animated Background -->
+        <div class="hero-bg">
+            <div class="hero-circle" style="top: 20%; left: 15%; animation-duration: 9s;"></div>
+            <div class="hero-circle" style="top: 60%; left: 70%; animation-duration: 12s;"></div>
+            <div class="hero-circle" style="top: 40%; left: 45%; width: 220px; height: 220px; animation-duration: 15s;"></div>
+        </div>
+
+        <div style="position: relative; z-index: 2;">
+            <h1>Anbarasan K</h1>
+
+            <p style="font-size: 1.3rem; margin-bottom: 15px;">
+                Aspiring Data Scientist & ML Developer | Python Developer
+            </p>
+
+            <p style="max-width: 700px; margin: auto;">
+                Passionate about building intelligent systems using Machine Learning, Python,
+                and Data-driven applications.
+            </p>
+
+            <!-- BUTTONS -->
+            <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+
+                <a href="#projects" class="cute-btn cute">
+                    ✨ View My Work
+                </a>
+                <a href="https://github.com/anbarasasnk2003"  class="cute-btn cu">
+                    🐱 GitHub Profile
+                </a>
+            </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+
+            <img src="images/profile.jpg" class="profile-img" alt="Profile Image">
+
+            <p class="about-text">
+                I am currently pursuing MSc Data Science at VIT Chennai. I enjoy working with data, extracting insights,
+                and creating ML-driven applications using Python.
+            </p>
+
+            <p class="about-text">
+                My goal is to become a Data Scientist or Machine Learning Engineer, and also explore Python Development roles.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills-grid">
+
+                <!-- Languages -->
+                <div class="skill-box">
+                    <h3 class="skill-title">Programming Languages</h3>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+
+                <!-- Development -->
+                <div class="skill-box">
+                    <h3 class="skill-title">Development</h3>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">API Development</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+
+                <!-- ML / DL -->
+                <div class="skill-box">
+                    <h3 class="skill-title">Machine Learning & Deep Learning</h3>
+                    <span class="skill-tag">Scikit-Learn</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">EDA</span>
+                    <span class="skill-tag">Model Evaluation</span>
+                    <span class="skill-tag">Feature Engineering</span>
+                </div>
+
+                <!-- Software Tools -->
+                <div class="skill-box">
+                    <h3 class="skill-title">Software Tools</h3>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Google Colab</span>
+                    <span class="skill-tag">VS Code</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+
+            <div class="project-card">
+                <h3>M.Sc Data Science</h3>
+                <p>Vellore Institute of Technology, Chennai</p>
+                <p><strong>2024 – 2026</strong></p>
+                <p>CGPA: 8.2/10</p>
+            </div>
+
+            <div class="project-card">
+                <h3>B.Sc Computer Science with Data Analytics</h3>
+                <p>PSG College of Arts & Science</p>
+                <p><strong>2021 – 2024</strong></p>
+                <p>CGPA: 8.3/10</p>
+            </div>
+        </div>
+    </section>
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+
+            <div class="project-card">
+                <h3>Complete Django Web Development Course</h3>
+                <p>GeeksForGeeks — 2025</p>
+                <a href="https://www.geeksforgeeks.org/certificate/2aecf324603075c3c4cb47d36486a622" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Database Management Systems</h3>
+                <p>Certified (Academic Coursework)</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- PROJECTS -->
+ <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <h3>🧠 Text to SQL Chatbot</h3>
+                    <p>Converts natural language into SQL queries using NLP + ML.</p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>NLP</span>
+                        <span>spaCy</span>
+                    </div>
+
+                    <a class="project-btn" href="https://github.com/anbarasasnk2003/texttosql" target="_blank">🔗 View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌍 Travel Recommendation System</h3>
+                    <p>Recommends tourist places using ML + Django.</p>
+
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>ML</span>
+                        <span>Python</span>
+                    </div>
+
+                    <a class="project-btn" href="https://github.com/anbarasasnk2003/travel-reccomendation-for-tamilnadu" target="_blank">🔗 GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>❤️ Heart Attack Risk Prediction</h3>
+                    <p>Predicts heart attack probability using ML models.</p>
+
+                    <div class="project-tags">
+                        <span>Machine Learning</span>
+                        <span>Python</span>
+                        <span>EDA</span>
+                    </div>
+
+                    <a class="project-btn" href="https://github.com/anbarasasnk2003/heart-attack-risk-prediction" target="_blank">🔗 GitHub</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <!-- INTERACTIVE CONTACT BAR -->
+    <section id="bottom-contact" class="bottom-contact">
+        <div class="contact-container">
+
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <a href="tel:+916374666588">+91 6374666588</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <a href="mailto:anbarasank1310@gmail.com">anbarasank1310@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">🐱</span>
+                <a href="https://github.com/anbarasasnk2003" target="_blank">
+                    github.com/anbarasasnk2003
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">🔗</span>
+                <a href="https://linkedin.com/in/anbarasan-k1310" target="_blank">
+                    linkedin.com/in/anbarasan-k1310
+                </a>
+            </div>
+
+           <div class="contact-item">
+                    <span>📄</span>
+                    <a class="resume-btn" href="Anbarasan_K_RESUME.pdf" download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        © 2025 Anbarasan K — All Rights Reserved
+    </footer>
+
+    <!-- SCROLL FIX SCRIPT -->
+    <script>
+        // Parallax floating circles on mouse move
+        document.addEventListener("mousemove", function(e) {
+            const circles = document.querySelectorAll(".hero-circle");
+            const x = (e.clientX / window.innerWidth) - 0.5;
+            const y = (e.clientY / window.innerHeight) - 0.5;
+
+            circles.forEach((circle, i) => {
+                const speed = (i + 1) * 15;
+                circle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        // Dynamic Smooth Scrolling — FIXES WHITE SPACE ON MOBILE + LAPTOP
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#") return;
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+                const header = document.querySelector("header");
+
+                const headerHeight = header.offsetHeight;
+                const offset = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+
+                window.scrollTo({
+                    top: offset,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
